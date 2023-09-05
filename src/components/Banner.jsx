@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Text from "./Text";
 import bannerimg from "../assets/images/bannerimg.svg";
-import knust from "../assets/images/knust.svg";
+import knust from "../assets/images/KNUST.svg";
 import UG from "../assets/images/UG.svg";
 import UCC from "../assets/images/UCC.svg";
 import { Link } from "react-router-dom";
