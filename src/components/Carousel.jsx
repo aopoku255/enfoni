@@ -12,11 +12,11 @@ import img4 from "../assets/images/michael abuah.svg";
 import img5 from "../assets/images/greysuit.svg";
 import img6 from "../assets/images/franka.jpg";
 import img7 from "../assets/images/alhaji.jpg";
-
 import "../style.css";
 
 // import required modules
-import { EffectCards } from "swiper/modules";
+import { EffectCards, Lazy, Autoplay } from "swiper/modules";
+// import "swiper/css/lazy";
 
 export default function Carousel() {
   return (

@@ -18,6 +18,7 @@ const Input = ({ label, logo, type, autoFocus, name, onChange, value }) => {
           name={name}
           onChange={onChange}
           value={value}
+          required
         />
       </div>
     </div>
