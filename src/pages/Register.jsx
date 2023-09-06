@@ -7,7 +7,7 @@ import mail from "../assets/images/mail.svg";
 import password from "../assets/images/icon _lock key_.svg";
 
 import Input from "../components/Input";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import AuthLayout from "../components/AuthLayout";
 import { useDispatch, useSelector } from "react-redux";
 import { auth, registerDetails } from "../app/features/authSlice/authSlice";
@@ -68,7 +68,35 @@ const Register = () => {
   };
   return (
     <AuthLayout heading="Create an account">
-      <form action="" className="mx-auto w-72 mt-8">
+      <h1 className="sm:hidden font-bold text-center mt-4">
+        Create an account
+      </h1>
+      <p className="text-xs text-gray-400 text-center lg:hidden">
+        Please enter your details
+      </p>
+      <div className="group w-72 px-2 py-2 mt-2 bg-gray-400/40 mx-auto lg:mt-4 rounded lg:hidden justify-between items-center">
+        <NavLink
+          to="/login"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-white rounded text-sm py-1.5 px-12 text-black"
+              : "text-sm py-1.5 px-12 text-black/70"
+          }
+        >
+          Login
+        </NavLink>
+        <NavLink
+          to="/register"
+          className={({ isActive }) =>
+            isActive
+              ? "bg-white rounded text-sm py-1.5 px-12 text-black"
+              : "text-sm py-1.5 px-12 text-black/70"
+          }
+        >
+          Signup
+        </NavLink>
+      </div>
+      <form action="" className="mx-auto w-72 mt-8 sm:pb-0 pb-10">
         <Input
           label="Full Name"
           logo={user}
@@ -122,7 +150,7 @@ const Register = () => {
         </div>
         <button
           onClick={handleClick}
-          className="bg-purple shadow-lg text-white rounded-md py-2.5 block w-full mt-4 disabled:opacity-40"
+          className="bg-purple shadow-lg text-white rounded-md py-2.5 block w-full mt-4 disabled:opacity-40 "
         >
           {details?.gown || details?.photoshoot
             ? "Proceed"

@@ -28,7 +28,7 @@ export default function ReviewCarousel() {
         }}
         // navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper w-144 h-96"
+        className="mySwiper lg:w-128 md:w-144 lg:shadow-2xl shadow-lg rounded-3xl shadow-light-green lg:mt-0 mt-10 h-96 lg:h-80"
       >
         <SwiperSlide>
           <ReviewCard />

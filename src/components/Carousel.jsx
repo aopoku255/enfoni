@@ -15,7 +15,7 @@ import img7 from "../assets/images/alhaji.jpg";
 import "../style.css";
 
 // import required modules
-import { EffectCards, Lazy, Autoplay } from "swiper/modules";
+import { EffectCards, Autoplay } from "swiper/modules";
 // import "swiper/css/lazy";
 
 export default function Carousel() {

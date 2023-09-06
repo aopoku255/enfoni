@@ -53,7 +53,7 @@ const MoreDetails = () => {
 
   return (
     <AuthLayout loggins={false} footer={false}>
-      <form action="" className="w-72 mx-auto mt-8">
+      <form action="" className="w-72 mx-auto mt-8 sm:pb-0 pb-10">
         <NewInput
           label="College"
           type="text"

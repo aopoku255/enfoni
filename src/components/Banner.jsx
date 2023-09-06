@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Text from "./Text";
-import bannerimg from "../assets/images/bannerimg.svg";
+import bannerimg from "../assets/images/bannerlady.png";
 import knust from "../assets/images/KNUST.svg";
 import UG from "../assets/images/UG.svg";
 import UCC from "../assets/images/UCC.svg";
@@ -9,38 +9,56 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
-    <div className="mx-auto h-screen bg-[url('./assets/images/banner.png')] bg-no-repeat bg-cover bg-center relative">
-      <div className="px-8">
+    <div className="">
+      <div className="bg-[url('./assets/images/banner.png')] bg-no-repeat bg-cover bg-center  lg:px-28 px-6">
         <Navbar />
-        <div className="flex justify-stretch align-top">
+        <div className="lg:grid lg:grid-cols-2 lg:items-center mx-auto">
           <div>
             <Text
               text="Graduation Made Memorable"
-              className="mt-10 ml-4 leading-snug"
+              className="font-bold text-white lg:text-5xl md: text-4xl lg:text-left text-center"
             />
-            <p className="w-128 ml-4 text-white mt-3">
+            <p className="text-white lg:inline-block hidden  my-8">
               Join us in commemorating your educational milestone with joy and
               pride. Discover how we make your graduation experience truly
               unforgettable.
             </p>
-            <p className="w-128 ml-4 text-white mt-5">
+            <p className="text-white text-center">
               Create an account to join the community.
             </p>
-            <Link
-              to="/register"
-              className="rounded-full bg-white text-green py-2 px-4 ml-4 font-bold mt-5 inline-block"
-            >
-              GET STARTED
-            </Link>
+            <div className="w-full flex justify-center items-center">
+              <Link
+                to="/register"
+                className="bg-white rounded-full text-green py-3 px-8 inline-block mt-5 mx-auto my-4"
+              >
+                GET STARTED
+              </Link>
+            </div>
           </div>
           <div>
-            <img className="h-150" src={bannerimg} alt="" />
+            <img className="" src={bannerimg} alt="" />
           </div>
         </div>
       </div>
-      <div className="bg-light-green absolute -bottom-24 h-24 w-full px-16">
+      <div className="bg-light-green lg:h-24 lg:px-24 px-6 lg:py-0 py-5">
+        <div className="lg:flex lg:justify-between lg:items-center grid grid-cols-4">
+          <p className="lg:text-lg text-xs">FEATURED SCHOOLS</p>
+          <div>
+            <img src={knust} alt="" className="block" />
+          </div>
+          <div>
+            <img src={UG} alt="" className="block" />
+          </div>
+          <div>
+            <img src={UCC} alt="" className="block" />
+          </div>
+        </div>
+      </div>
+      {/* <div className="">
+      </div>
+      <div className="bg-light-green absolute lg:-bottom-24 h-24 w-full px-16">
         <div className="flex justify-between items-center">
-          <p className="">FEATURED SCHOOLS</p>
+          <p className="lg:text-lg text-xs">FEATURED SCHOOLS</p>
           <div>
             <img src={knust} alt="" />
           </div>
@@ -51,7 +69,7 @@ const Banner = () => {
             <img src={UCC} alt="" className="align-top" />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

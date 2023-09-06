@@ -5,7 +5,7 @@ import Gallery from "../components/Gallery";
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <Banner />
       <Services />
       <Gallery />
