@@ -128,7 +128,7 @@ const Register = () => {
               type="checkbox"
               name="gown"
               id=""
-              className="checked:bg-green "
+              className="accent-green"
               onChange={handleChange}
             />
             <label htmlFor="" className="text-xs mx-2">
@@ -140,7 +140,7 @@ const Register = () => {
               type="checkbox"
               name="photoshoot"
               id=""
-              className="checked:bg-green"
+              className="accent-green"
               onChange={handleChange}
             />
             <label htmlFor="" className="text-xs mx-2">

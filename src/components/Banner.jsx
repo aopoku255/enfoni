@@ -18,18 +18,18 @@ const Banner = () => {
               text="Graduation Made Memorable"
               className="font-bold text-white lg:text-5xl md: text-4xl lg:text-left text-center"
             />
-            <p className="text-white lg:inline-block hidden  my-8">
+            <p className="text-white lg:inline-block lg:text-left hidden  my-8">
               Join us in commemorating your educational milestone with joy and
               pride. Discover how we make your graduation experience truly
               unforgettable.
             </p>
-            <p className="text-white text-center">
+            <p className="text-white text-center lg:text-left">
               Create an account to join the community.
             </p>
-            <div className="w-full flex justify-center items-center">
+            <div className="flex justify-center items-center lg:justify-start lg:items-start">
               <Link
                 to="/register"
-                className="bg-white rounded-full text-green py-3 px-8 inline-block mt-5 mx-auto my-4"
+                className="bg-white rounded-full text-green py-3 px-8 inline-block mt-5 my-4"
               >
                 GET STARTED
               </Link>
@@ -40,19 +40,21 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="bg-light-green lg:h-24 lg:px-24 px-6 lg:py-0 py-5">
-        <div className="lg:flex lg:justify-between lg:items-center grid grid-cols-4">
-          <p className="lg:text-lg text-xs">FEATURED SCHOOLS</p>
-          <div>
-            <img src={knust} alt="" className="block" />
+      <div className="bg-light-green ">
+        <marquee behavior="scroll" loop="">
+          <div className="flex justify-between items-center py-4">
+            <p className="lg:text-lg text-xs">FEATURED SCHOOLS</p>
+            <div>
+              <img src={knust} alt="" className="block h-6  md:h-16" />
+            </div>
+            <div>
+              <img src={UG} alt="" className="block h-6  md:h-16" />
+            </div>
+            <div>
+              <img src={UCC} alt="" className="block h-6  md:h-16" />
+            </div>
           </div>
-          <div>
-            <img src={UG} alt="" className="block" />
-          </div>
-          <div>
-            <img src={UCC} alt="" className="block" />
-          </div>
-        </div>
+        </marquee>
       </div>
       {/* <div className="">
       </div>

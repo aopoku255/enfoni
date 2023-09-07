@@ -4,7 +4,7 @@ import ServiceCard from "./ServiceCard";
 
 const Services = () => {
   return (
-    <div className="md:px-24 px-6">
+    <div className="md:px-24 px-6" id="services">
       <h1 className="md:text-5xl text-4xl font-bold mt-8 text-green text-center">
         Our Services
       </h1>

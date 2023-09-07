@@ -18,7 +18,7 @@ const AuthLayout = ({
     <div>
       <div className="lg:grid lg:grid-cols-2 relative lg:bg-none bg-[url(./assets/images/register.svg)] bg-no-repeat bg-cover bg-center h-[calc(100vh-20px)]">
         <div>
-          <img src={image} alt="" className="h-screen lg:block hidden" />
+          <img src={image} alt="" className="h-screen lg:block hidden " />
         </div>
         <div>
           <button

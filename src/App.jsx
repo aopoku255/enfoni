@@ -12,6 +12,8 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import MoreDetails from "./pages/MoreDetails";
 import Error from "./pages/Error";
+import Code from "./pages/Code";
+import SelectFrame from "./pages/SelectFrame";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/details" element={<MoreDetails />} />
+          <Route path="/code" element={<Code />} />
+          <Route path="/select-frame" element={<SelectFrame />} />
           <Route exact path="*" element={<Error />} />
         </Routes>
       </Router>

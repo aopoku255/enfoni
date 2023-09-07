@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../assets/logo.svg";
 import notification from "../assets/images/icon _bell_.svg";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -10,10 +11,10 @@ const Navbar = () => {
         aria-label="Global"
       >
         <div class="flex lg:flex-1">
-          <a href="#" class="-m-1.5 p-1.5">
+          <Link to="/" class="-m-1.5 p-1.5">
             <span class="sr-only">Your Company</span>
-            <img class="h-12 w-auto" src={logo} alt="" />
-          </a>
+            <img class="h-16 w-auto" src={logo} alt="" />
+          </Link>
         </div>
 
         <div class="hidden lg:flex lg:gap-x-12">
@@ -27,16 +28,19 @@ const Navbar = () => {
             </button>
           </div>
 
-          <a href="#" class="text-sm font-semibold leading-6 text-white">
+          <a
+            href="#services"
+            class="text-sm font-semibold leading-6 text-white"
+          >
             Services
           </a>
-          <a href="#" class="text-sm font-semibold leading-6 text-white">
+          <a href="#gallery" class="text-sm font-semibold leading-6 text-white">
             Gallery
           </a>
-          <a href="#" class="text-sm font-semibold leading-6 text-white">
+          <a href="#pricing" class="text-sm font-semibold leading-6 text-white">
             Pricing
           </a>
-          <a href="#" class="text-sm font-semibold leading-6 text-white">
+          <a href="#about" class="text-sm font-semibold leading-6 text-white">
             About
           </a>
           <a href="#" class="text-sm font-semibold leading-6 text-white">

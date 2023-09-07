@@ -5,7 +5,7 @@ import ReviewCarousel from "./ReviewCarousel";
 
 const Gallery = () => {
   return (
-    <div className="md:px-24 px-6 mt-10 ">
+    <div className="md:px-24 px-6 mt-10 " id="gallery">
       <h1 className="text-center font-bold  md:text-5xl text-4xl text-green">
         Gallery
       </h1>
