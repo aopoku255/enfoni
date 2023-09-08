@@ -16,20 +16,20 @@ const Banner = () => {
           <div>
             <Text
               text="Graduation Made Memorable"
-              className="font-bold text-white lg:text-5xl md: text-4xl lg:text-left text-center"
+              className="font-bold text-white lg:text-5xl md:text-4xl lg:text-left text-center 2xl:text-7xl"
             />
-            <p className="text-white lg:inline-block lg:text-left hidden  my-8">
+            <p className="text-white lg:inline-block lg:text-left hidden  my-8 2xl:text-4xl">
               Join us in commemorating your educational milestone with joy and
               pride. Discover how we make your graduation experience truly
               unforgettable.
             </p>
-            <p className="text-white text-center lg:text-left">
+            <p className="text-white text-center lg:text-left 2xl:text-4xl ">
               Create an account to join the community.
             </p>
             <div className="flex justify-center items-center lg:justify-start lg:items-start">
               <Link
                 to="/register"
-                className="bg-white rounded-full text-green py-3 px-8 inline-block mt-5 my-4"
+                className="bg-white rounded-full text-green py-3 px-8 inline-block mt-8"
               >
                 GET STARTED
               </Link>
@@ -41,20 +41,18 @@ const Banner = () => {
         </div>
       </div>
       <div className="bg-light-green ">
-        <marquee behavior="scroll" loop="">
-          <div className="flex justify-between items-center py-4">
-            <p className="lg:text-lg text-xs">FEATURED SCHOOLS</p>
-            <div>
-              <img src={knust} alt="" className="block h-6  md:h-16" />
-            </div>
-            <div>
-              <img src={UG} alt="" className="block h-6  md:h-16" />
-            </div>
-            <div>
-              <img src={UCC} alt="" className="block h-6  md:h-16" />
-            </div>
+        <div className="flex justify-between items-center py-4 lg:px-24 px-6">
+          <p className="lg:text-lg text-xs">FEATURED SCHOOLS</p>
+          <div>
+            <img src={knust} alt="" className="block h-6  md:h-16" />
           </div>
-        </marquee>
+          <div>
+            <img src={UG} alt="" className="block h-6  md:h-16" />
+          </div>
+          <div>
+            <img src={UCC} alt="" className="block h-6  md:h-16" />
+          </div>
+        </div>
       </div>
       {/* <div className="">
       </div>

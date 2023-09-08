@@ -1,6 +1,15 @@
 import React from "react";
 
-const Input = ({ label, logo, type, autoFocus, name, onChange, value }) => {
+const Input = ({
+  label,
+  logo,
+  type,
+  autoFocus,
+  name,
+  onChange,
+  value,
+  required,
+}) => {
   return (
     <div className="flex justify-center items-center border-solid border-2 border-gray-600/20 h-14 p-3 rounded-lg mb-4">
       <div className="mx-3">
@@ -18,7 +27,7 @@ const Input = ({ label, logo, type, autoFocus, name, onChange, value }) => {
           name={name}
           onChange={onChange}
           value={value}
-          required
+          required={required}
         />
       </div>
     </div>

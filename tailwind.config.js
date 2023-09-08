@@ -25,6 +25,8 @@ export default {
         '144': '36rem',
         '148': '38rem',
         '150': '40rem',
+        '160': '45rem',
+        '165': '50rem',
       },
       borderSpacing: {
         '1': "1px"

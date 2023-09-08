@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <header class="">
       <nav
-        class="mx-auto flex max-w-7xl items-center justify-between py-6"
+        class="mx-auto flex  items-center justify-between py-6"
         aria-label="Global"
       >
         <div class="flex lg:flex-1">
@@ -21,7 +21,7 @@ const Navbar = () => {
           <div class="relative">
             <button
               type="button"
-              class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white"
+              class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white 2xl:text-3xl"
               aria-expanded="false"
             >
               Home
@@ -30,23 +30,38 @@ const Navbar = () => {
 
           <a
             href="#services"
-            class="text-sm font-semibold leading-6 text-white"
+            class="text-sm font-semibold leading-6 text-white 2xl:text-3xl"
           >
             Services
           </a>
-          <a href="#gallery" class="text-sm font-semibold leading-6 text-white">
+          <a
+            href="#gallery"
+            class="text-sm font-semibold leading-6 text-white 2xl:text-3xl"
+          >
             Gallery
           </a>
-          <a href="#pricing" class="text-sm font-semibold leading-6 text-white">
+          <a
+            href="#pricing"
+            class="text-sm font-semibold leading-6 text-white 2xl:text-3xl"
+          >
             Pricing
           </a>
-          <a href="#about" class="text-sm font-semibold leading-6 text-white">
+          <a
+            href="#about"
+            class="text-sm font-semibold leading-6 text-white 2xl:text-3xl"
+          >
             About
           </a>
-          <a href="#" class="text-sm font-semibold leading-6 text-white">
+          <a
+            href="#"
+            class="text-sm font-semibold leading-6 text-white 2xl:text-3xl"
+          >
             Team
           </a>
-          <a href="#" class="text-sm font-semibold leading-6 text-white">
+          <a
+            href="#"
+            class="text-sm font-semibold leading-6 text-white 2xl:text-3xl"
+          >
             Contact
           </a>
         </div>

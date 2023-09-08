@@ -7,6 +7,9 @@ const initialState = {
   userInfo: sessionStorage.getItem("userInfo")
     ? JSON.parse(sessionStorage.getItem("userInfo"))
     : [],
+  userpayment: sessionStorage.getItem("payment")
+    ? JSON.parse(sessionStorage.getItem("payment"))
+    : [],
 };
 
 const authSlice = createSlice({
@@ -25,9 +28,15 @@ const authSlice = createSlice({
         sessionStorage.setItem("userInfo", JSON.stringify(action.payload));
       },
     },
+    payment: {
+      reducer(state, action) {
+        state.userpayment = action?.payload;
+        sessionStorage.setItem("payment", JSON.stringify(action?.payload));
+      },
+    },
   },
 });
 
-export const { auth } = authSlice.actions;
+export const { auth, payment } = authSlice.actions;
 export const registerDetails = (state) => state?.auth?.auth;
 export default authSlice.reducer;

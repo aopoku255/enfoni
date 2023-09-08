@@ -5,6 +5,9 @@ import NewInput from "../components/NewInput";
 import Button from "../components/Button";
 import { usePostRegisterMutation } from "../app/features/authSlice/authApiSlice";
 import { ToastContainer, toast } from "react-toastify";
+import { useSelector } from "react-redux";
+import { registerDetails } from "../app/features/authSlice/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const MoreDetails = () => {
   const [info, setInfo] = useState(JSON.parse(sessionStorage.getItem("auth")));
@@ -16,6 +19,8 @@ const MoreDetails = () => {
   });
 
   const [register, { isLoading }] = usePostRegisterMutation();
+  const userdetails = useSelector(registerDetails);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -47,6 +52,15 @@ const MoreDetails = () => {
           progress: undefined,
           theme: "light",
         });
+      }
+      if (userdetails?.gown && userdetails?.photoshoot) {
+        navigate("/select-frame");
+      }
+      if (userdetails?.gown) {
+        navigate("/code");
+      }
+      if (userdetails?.photoshoot) {
+        navigate("/select-frame");
       }
     } catch (error) {}
   };

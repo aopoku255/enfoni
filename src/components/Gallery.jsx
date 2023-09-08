@@ -2,14 +2,15 @@ import React from "react";
 import SimpleSlider from "./Carousel";
 import ReviewCard from "./ReviewCard";
 import ReviewCarousel from "./ReviewCarousel";
+import Swiper3D from "./Swiper3D";
 
 const Gallery = () => {
   return (
     <div className="md:px-24 px-6 mt-10 " id="gallery">
-      <h1 className="text-center font-bold  md:text-5xl text-4xl text-green">
+      <h1 className="text-center font-bold  md:text-5xl text-4xl text-green 2xl:text-8xl 2xl:mt-24">
         Gallery
       </h1>
-      <p className="text-center mt-3 font-semibold">
+      <p className="text-center mt-3 font-semibold 2xl:text-3xl 2xl:w-165 2xl:my-8 2xl:mx-auto">
         Browse Through Our Gallery of Unforgettable Graduation Moments.
       </p>
       {/* <div className="group flex mx-auto justify-between items-center w-96 mt-3">
@@ -23,17 +24,17 @@ const Gallery = () => {
           MERCHANDISE
         </button>
       </div> */}
-      <SimpleSlider />
+      <Swiper3D />
       <div className="md:mt-24  mt-10 mb-24">
-        <div className="lg:grid lg:grid-cols-2 gap-4">
+        <div className="lg:grid lg:grid-cols-2 gap-4 border-spacing-y-8">
           <div className="">
-            <p className="text-green lg:text-5xl font-bold text-4xl text-center lg:text-left">
+            <p className="text-green lg:text-5xl font-bold text-4xl text-center lg:text-left 2xl:text-7xl">
               TESTIMONIALS
             </p>
-            <h1 className="text-green font-bold text-2xl my-3 text-center lg:text-left">
+            <h1 className="text-green font-bold text-2xl my-3 text-center lg:text-left 2xl:text-4xl">
               Client Reviews{" "}
             </h1>
-            <p className="text-justify">
+            <p className="text-justify 2xl:text-3xl">
               Hear From Our Graduates: Heartfelt Experiences Shared by Those
               We've Proudly Served. Discover how our meticulous attention to
               detail in gown fittings, the artistry of our photoshoots, and the
@@ -50,7 +51,7 @@ const Gallery = () => {
               </p>
             </p>
           </div>
-          <ReviewCarousel />
+          <ReviewCard />
         </div>
       </div>
     </div>

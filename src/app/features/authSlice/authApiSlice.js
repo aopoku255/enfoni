@@ -25,7 +25,19 @@ const authApiSlice = apiSlice.injectEndpoints({
         body: { ...data },
       }),
     }),
+
+    postUserPayment: builder.mutation({
+      query: (data) => ({
+        url: "/payment",
+        method: "POST",
+        body: { ...data },
+      }),
+    }),
   }),
 });
 
-export const { usePostRegisterMutation, usePostLoginMutation } = authApiSlice;
+export const {
+  usePostRegisterMutation,
+  usePostLoginMutation,
+  usePostUserPaymentMutation,
+} = authApiSlice;

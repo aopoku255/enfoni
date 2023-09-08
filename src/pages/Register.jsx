@@ -20,31 +20,32 @@ const Register = () => {
     full_name: "",
     email: "",
     password: "",
-    gown: "",
-    photoshoot: "",
+    gown: false,
+    photoshoot: false,
   });
 
   const navigate = useNavigate();
   const [register, { isLoading }] = usePostRegisterMutation();
-
   const handleChange = (e) => {
     const name = e.target.name;
     const value =
       e.target.type === "checkbox" ? e.target.checked : e.target.value;
     setDetails({ ...details, [name]: value });
   };
+  // console.log(details);
 
   const dispatch = useDispatch();
 
   const handleClick = async (e) => {
     e.preventDefault();
-
-    if (details?.gown || details?.photoshoot) {
-      dispatch(auth({ ...details }));
-      navigate("/details");
+    if (!details.full_name || !details.email || !details.password) {
+      toast("Please enter all fields");
     } else {
-      try {
+      if (details?.gown || details?.photoshoot) {
         const response = await register({ ...details }).unwrap();
+
+        dispatch(auth({ ...details }));
+
         if (response?.status === 400) {
           toast.error(response?.data || response?.message, {
             position: "top-center",
@@ -56,13 +57,35 @@ const Register = () => {
             progress: undefined,
             theme: "light",
           });
-          if (response?.status === 200) {
-            toast.success(response?.message);
-            navigate("/login");
-          }
+        } else {
+          navigate("/details");
         }
-      } catch (error) {
-        throw error;
+      } else {
+        try {
+          const response = await register({ ...details }).unwrap();
+          console.log(response);
+          if (response?.status === 400) {
+            toast.error(response?.data || response?.message, {
+              position: "top-center",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+          }
+          if (response?.status === 200) {
+            setTimeout(() => {
+              navigate("/login");
+            }, 4000);
+            toast.success(response?.message);
+            // toast.success(response?.message);
+          }
+        } catch (error) {
+          throw error;
+        }
       }
     }
   };
@@ -105,6 +128,7 @@ const Register = () => {
           name="full_name"
           onChange={handleChange}
           value={details?.full_name}
+          required={true}
         />
         <Input
           label="Email Address"

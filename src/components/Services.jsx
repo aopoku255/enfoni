@@ -4,15 +4,15 @@ import ServiceCard from "./ServiceCard";
 
 const Services = () => {
   return (
-    <div className="md:px-24 px-6" id="services">
-      <h1 className="md:text-5xl text-4xl font-bold mt-8 text-green text-center">
+    <div className="lg:px-24 px-6" id="services">
+      <h1 className="lg:text-5xl text-4xl font-bold mt-8 text-green text-center 2xl:text-8xl">
         Our Services
       </h1>
-      <p className="md:w-128 w-80 mx-auto text-center font-semibold mt-4">
+      <p className="lg:w-128 w-80 mx-auto text-center font-semibold mt-4 2xl:text-3xl 2xl:w-165 2xl:my-8">
         From personalised gown fittings to professional photography sessions, we
         ensure every detail is perfected.{" "}
       </p>
-      <div className="mt-8 md:grid md:grid-cols-3 md:gap-5">
+      <div className="mt-8 lg:grid lg:grid-cols-3 lg:gap-5 md:grid md:grid-cols-3 md:gap-5">
         <ServiceCard
           heading="Graduation Photoshoot"
           description="Immortalize Your Milestone with Elegance and Style. With expert

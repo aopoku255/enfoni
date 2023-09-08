@@ -8,7 +8,7 @@ const ReviewCard = ({
   description = "Choosing the services for my graduation from this website was the best decision I made. The attention to detail in my gown and the seamless photoshoot experience truly made my day memorable",
 }) => {
   return (
-    <div className="rounded-3xl p-4 ml-3 ">
+    <div className="rounded-3xl p-4 ml-3 shadow-2xl">
       <div className="flex">
         <button
           type="button"
@@ -19,15 +19,19 @@ const ReviewCard = ({
         >
           <span className="absolute -inset-1.5"></span>
           <span className="sr-only">Open user menu</span>
-          <img className="h-12 w-12 rounded-full" src={image} alt="" />
+          <img
+            className="h-12 w-12 rounded-full 2xl:h-18 2xl:w-18"
+            src={image}
+            alt=""
+          />
         </button>
         <div className="ml-2">
-          <h4 className="font-bold">{name}</h4>
-          <p className="font-semibold">{position}</p>
+          <h4 className="font-bold ">{name}</h4>
+          <p className="font-semibold ">{position}</p>
         </div>
       </div>
-      <h4 className="font-bold md:text-center my-6">{heading}</h4>
-      <p className="md:text-center">"{description}” </p>
+      <h4 className="font-bold md:text-center my-6 2xl:text-4xl">{heading}</h4>
+      <p className="md:text-center 2xl:text-3xl">"{description}” </p>
     </div>
   );
 };
