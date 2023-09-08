@@ -6,36 +6,44 @@ import frame from "../assets/images/ashframe.svg";
 import goldframe from "../assets/images/gold.svg";
 import money from "../assets/images/vaadin_money.svg";
 import { usePaystackPayment, PaystackButton } from "react-paystack";
+import { useNavigate } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
 const SelectFrame = () => {
   let total = 300;
   const [grandTotal, setGrandTotal] = useState(300);
   const [val, setTotal] = useState("");
+  const [amount, setAmount] = useState();
   const [part, setPart] = useState(false);
-
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const name = e.target.name;
     const value =
       e.target.type === "checkbox" ? setPart(e.target.checked) : e.target.value;
     setTotal(e.target.value);
 
-    switch(value){
+    setAmount(value);
+
+    switch (value) {
       case "300":
-        setGrandTotal(total + 300)
+        setGrandTotal(total + 300);
         break;
       case "150":
-        setGrandTotal(tot)
+        setGrandTotal(total + 150);
+        break;
+      default:
+        setGrandTotal(total);
     }
 
-    if (value === "300") {
-      setGrandTotal(total + 300);
-    } else {
-      setGrandTotal(total + 150);
-    }
+    // if (value === "300") {
+    //   setGrandTotal(total + 300);
+    // } else {
+    //   setGrandTotal(total + 150);
+    // }
   };
 
   const componentProps = {
     email: "aopoku255@gmail.com",
-    amount: 400 * 100,
+    amount: amount === undefined ? grandTotal * 100 : amount,
     currency: "GHS",
     channels: ["card", "bank", "ussd", "qr", "mobile_money", "bank_transfer"],
     // metadata: {
@@ -44,8 +52,11 @@ const SelectFrame = () => {
     // },
     publicKey: import.meta.env.VITE_PAYSTACK_PK_KEY,
     text: "Checkout",
-    // onSuccess: () =>
-    //   alert("Thanks for doing business with us! Come back soon!!"),
+    onSuccess: () => {
+      setTimeout(() => {}, 3000);
+      navigate("/code");
+    },
+    // alert("Thanks for doing business with us! Come back soon!!"),
     // onClose: () => alert(""),
   };
 
@@ -55,14 +66,23 @@ const SelectFrame = () => {
   return (
     <div>
       <div className="lg:grid lg:grid-cols-2">
-        <div className="m-10">
-          <img src={img} alt="" className="rounded-3xl" />
-        </div>
+        {/* <div className="m-10">
+        </div> */}
+        <Swiper className="mt-10 ml-10 pb-10">
+          <SwiperSlide>
+            <img
+              src={img}
+              alt=""
+              className="rounded-3xl object-cover"
+              style={{ width: "100%", height: "100vh", objectFit: "cover" }}
+            />
+          </SwiperSlide>
+        </Swiper>
         <div className="relative my-10">
           <h3 className="font-bold mt-20 ml-3 lg:text-2xl">Select a frame</h3>
           <div className="flex space-x-4">
-            <div>
-              <img src={frame} alt="" />
+            <div className="">
+              <img src={frame} alt="" className="h-48" />
               <p className="font-semibold text-xs ml-4 mt-1"></p>
               <div className="flex align-bottom mt-3 ml-4 space-x-2">
                 <div className="flex justify-center select-none items-center text-xs border-solid border-[1px] rounded-sm p-1 space-x-1 border-gray-400">
@@ -82,7 +102,7 @@ const SelectFrame = () => {
               </div>
             </div>
             <div>
-              <img src={goldframe} alt="" className="" />
+              <img src={goldframe} alt="" className="h-48" />
               <p className="font-semibold text-xs ml-4"></p>
               <div className="flex align-bottom mt-3 ml-4 space-x-2">
                 <div className="flex justify-center select-none items-center text-xs border-solid border-[1px] rounded-sm p-1 space-x-1 border-gray-400">
