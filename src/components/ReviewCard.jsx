@@ -8,7 +8,11 @@ const ReviewCard = ({
   description = "Choosing the services for my graduation from this website was the best decision I made. The attention to detail in my gown and the seamless photoshoot experience truly made my day memorable",
 }) => {
   return (
-    <div className="rounded-3xl p-4 ml-3 shadow-2xl">
+    <div
+      className="rounded-3xl p-4 ml-3 shadow-2xl"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       <div className="flex">
         <button
           type="button"

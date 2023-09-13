@@ -55,22 +55,66 @@
 .slider-controler .slider-arrow::after {
   content: '';
 }
-
-@media (min-width: 1920px) {
+/* @media (min-width: 768px) {
+  
   .swiper-slide {
-    width:50rem;
-    height: 60rem;
+    width:15rem;
+    height: 25rem;
     margin: 4rem 0;
     position: relative;
    
   }
   
   .swiper-slide img {
-    width: 50rem;
-    height: 60rem;
+    width: 15rem;
+    height: 25rem;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+  .slider-controler .slider-arrow{
+    width: 2rem;
+    height: 2rem;
+  }
+} */
+
+@media (max-width: 576px) {
+  
+  .swiper-slide {
+    width:10rem;
+    height: 15rem;
+    margin: 4rem 0;
+    position: relative;
+   
+  }
+  
+  .swiper-slide img {
+    width: 10rem;
+    height: 15rem;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+  .slider-controler .slider-arrow{
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .swiper-slide {
+    width:40rem;
+    height: 50rem;
+    margin: 4rem 0;
+    position: relative;
+   
+  }
+  
+  .swiper-slide img {
+    width: 40rem;
+    height: 50rem;
     border-radius: 2rem;
     object-fit: cover;
   }
+
   .slider-controler .slider-arrow{
     width: 5rem;
     height: 5rem;

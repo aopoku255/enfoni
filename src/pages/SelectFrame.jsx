@@ -2,162 +2,241 @@ import React, { useEffect, useState } from "react";
 import AuthLayout from "../components/AuthLayout";
 import logo from "../assets/images/enfoni.svg";
 import img from "../assets/images/barbra.svg";
-import frame from "../assets/images/ashframe.svg";
-import goldframe from "../assets/images/gold.svg";
+import frame from "../assets/images/blackframe.svg";
+import goldframe from "../assets/images/framegold.svg";
+import blackframelady from "../assets/images/framelady2svg.svg";
+import goldframelady from "../assets/images/framelady.svg";
+import checkedicon from "../assets/images/checkedicon.svg";
 import money from "../assets/images/vaadin_money.svg";
+import uptoGod from "../assets/images/uptoGod.svg";
+import knustlogo from "../assets/images/knustlogo.jpg";
 import { usePaystackPayment, PaystackButton } from "react-paystack";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { ToastContainer, toast } from "react-toastify";
 const SelectFrame = () => {
-  let total = 300;
-  const [grandTotal, setGrandTotal] = useState(300);
-  const [val, setTotal] = useState("");
-  const [amount, setAmount] = useState();
-  const [part, setPart] = useState(false);
-  const navigate = useNavigate();
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value =
-      e.target.type === "checkbox" ? setPart(e.target.checked) : e.target.value;
-    setTotal(e.target.value);
+  const [frame1, setFrame1] = useState(false);
+  const [frame2, setFrame2] = useState(false);
+  const [part, setPartPayment] = useState(false);
+  const [delivery, setDelivery] = useState(false);
 
-    setAmount(value);
-
-    switch (value) {
-      case "300":
-        setGrandTotal(total + 300);
-        break;
-      case "150":
-        setGrandTotal(total + 150);
-        break;
-      default:
-        setGrandTotal(total);
-    }
-
-    // if (value === "300") {
-    //   setGrandTotal(total + 300);
-    // } else {
-    //   setGrandTotal(total + 150);
-    // }
+  const handleClick1 = () => {
+    setFrame1(true);
+    setFrame2(false);
+  };
+  const handleClick2 = () => {
+    setFrame2(true);
+    setFrame1(false);
   };
 
-  const componentProps = {
-    email: "aopoku255@gmail.com",
-    amount: amount === undefined ? grandTotal * 100 : amount,
-    currency: "GHS",
-    channels: ["card", "bank", "ussd", "qr", "mobile_money", "bank_transfer"],
-    // metadata: {
-    //   name,
-    //   phone,
-    // },
-    publicKey: import.meta.env.VITE_PAYSTACK_PK_KEY,
-    text: "Checkout",
-    onSuccess: () => {
-      setTimeout(() => {}, 3000);
-      navigate("/code");
-    },
-    // alert("Thanks for doing business with us! Come back soon!!"),
-    // onClose: () => alert(""),
+  const partPayment = (e) => {
+    const checked = e.target.checked;
+    setPartPayment(checked);
+    checked ? toast.info("Message") : "";
+  };
+  const deliverySection = (e) => {
+    const checked = e.target.checked;
+    setDelivery(checked);
   };
 
-  const handleClick = (e) => {
-    e.preventDefault();
-  };
   return (
     <div>
+      <ToastContainer />
       <div className="lg:grid lg:grid-cols-2">
-        {/* <div className="m-10">
-        </div> */}
-        <Swiper className="mt-10 ml-10 pb-10">
-          <SwiperSlide>
+        <div className=" inset-0 bg-[url(./assets/images/uptoGod.svg)] bg-no-repeat bg-cover h-screen w-screen">
+          <div className="flex justify-center items-center flex-col space-y-5 bg-white/95 h-screen w-screen">
             <img
-              src={img}
+              src={knustlogo}
               alt=""
-              className="rounded-3xl object-cover"
-              style={{ width: "100%", height: "100vh", objectFit: "cover" }}
+              width={50}
+              className="mt-4 mix-blend-darken"
             />
-          </SwiperSlide>
-        </Swiper>
-        <div className="relative my-10">
-          <h3 className="font-bold mt-20 ml-3 lg:text-2xl">Select a frame</h3>
-          <div className="flex space-x-4">
-            <div className="">
-              <img src={frame} alt="" className="h-48" />
-              <p className="font-semibold text-xs ml-4 mt-1"></p>
-              <div className="flex align-bottom mt-3 ml-4 space-x-2">
-                <div className="flex justify-center select-none items-center text-xs border-solid border-[1px] rounded-sm p-1 space-x-1 border-gray-400">
-                  <img src={money} alt="" className="h-4" />
-                  <span className="2xl:text-2xl">GHS 300</span>
-                </div>
-                <div className="self-center">
-                  <input
-                    type="radio"
-                    name="frame"
-                    className="accent-green "
-                    id=""
-                    value="300"
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
+            <div className="w-80 h-96">
+              <img
+                src={frame2 ? goldframelady : blackframelady}
+                alt=""
+                className="block h-full w-full  object-contain pointer-events-none"
+              />
             </div>
-            <div>
-              <img src={goldframe} alt="" className="h-48" />
-              <p className="font-semibold text-xs ml-4"></p>
-              <div className="flex align-bottom mt-3 ml-4 space-x-2">
-                <div className="flex justify-center select-none items-center text-xs border-solid border-[1px] rounded-sm p-1 space-x-1 border-gray-400">
-                  <img src={money} alt="" className="h-4" />
-                  <span className="2xl:text-2xl">GHS 150</span>
-                </div>
-                <div className="self-center">
-                  <input
-                    type="radio"
-                    name="frame"
-                    className="accent-green "
-                    id=""
-                    value="150"
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="ml-4 my-3">
-            <input
-              type="checkbox"
-              name=""
-              id=""
-              className="accent-green"
-              onChange={handleChange}
-            />
-            <label htmlFor="" className="ml-2">
-              Select this if you want to make part deposit?
-            </label>
-          </div>
-          {part ? (
-            <input
-              type="number"
-              min={val ? grandTotal / 2 : grandTotal}
-              // value={grandTotal / 2}
-              onChange={handleChange}
-              placeholder="Number of extra printed photos"
-              className="border-[1px] border-gray-300 text-purple border-solid mt-4 ml-4 p-2 rounded-md placeholder:text-sm focus:border-none focus:outline-purple"
-            />
-          ) : (
-            <p></p>
-          )}
-
-          <div className="md:absolute bottom-0">
-            <p className="ml-4 text-purple font-bold">
-              TOTAL: GH₵ {grandTotal}
+            <p className="text-xs text-red-300 text-center w-96 lg:block hidden">
+              Your one stop online platform that offers sourvirs, merchandise
+              sales, graduation gown, booking services, graduation photoshoot,
+              bookings for universities in Ghana
             </p>
-            {/* <button className="bg-purple   text-white font-semibold block mt-3 ml-4 py-2 px-8 rounded-md">
-              Checkout
-            </button> */}
-            <PaystackButton
-              {...componentProps}
-              className="bg-purple text-white font-semibold block mt-3 ml-4 py-2 px-8 rounded-md"
-            />
+          </div>
+        </div>
+        <div className="bg-light-green lg:h-[95vh] w-[80%]  mx-auto mt-4 rounded-lg shadow-xl lg:mb-0 mb-10">
+          <div className="shadow-xl lg:h-[95%] w-[95%] mx-auto rounded-lg">
+            <h1 className="text-center mt-4 text-xl">SELECT A FRAME</h1>
+            <div className="flex justify-center items-center space-x-2 mt-3">
+              <NavLink
+                to=""
+                className="border-[1px] border-solid border-black bg-black text-white h-5 w-5 flex justify-center items-center rounded-sm text-xs"
+              >
+                1
+              </NavLink>
+              {!delivery ? (
+                <span className="w-20 h-[1px] bg-gray-600"></span>
+              ) : (
+                <></>
+              )}
+              {!delivery ? (
+                <NavLink
+                  to=""
+                  className="border-[1px] border-solid border-black h-5 w-5 flex justify-center items-center rounded-sm text-xs"
+                >
+                  2
+                </NavLink>
+              ) : (
+                <></>
+              )}
+              <span
+                data-aos=""
+                className={`${!delivery ? "w-20" : "w-48"} h-[1px] bg-gray-600`}
+              ></span>
+              <NavLink
+                to=""
+                className="border-[1px] border-solid border-black h-5 w-5 flex justify-center items-center rounded-sm text-xs"
+              >
+                {!delivery ? 3 : 2}
+              </NavLink>
+            </div>
+            <div className="flex justify-center items-center mt-4 space-x-4">
+              <div
+                className={`${
+                  frame1
+                    ? "border-2 border-solid border-green "
+                    : "border-2 border-solid border-white"
+                } shadow-xl rounded-md relative p-1 cursor-pointer bg-white`}
+                onClick={handleClick1}
+              >
+                <div className="w-28 h-36">
+                  <img
+                    src={frame}
+                    alt=""
+                    className="w-full h-full mix-blend-darken object-cover pointer-events-none"
+                  />
+                </div>
+                <p className="text-center text-sm">GHC 300</p>
+                {frame1 ? (
+                  <img
+                    src={checkedicon}
+                    alt=""
+                    className="absolute -top-2 -right-2"
+                    width={20}
+                  />
+                ) : (
+                  ""
+                )}
+              </div>
+              <div
+                className={`${
+                  frame2
+                    ? "border-2 border-solid border-green "
+                    : "border-2 border-solid border-white"
+                } shadow-xl rounded-md relative p-1 cursor-pointer bg-white`}
+                onClick={handleClick2}
+              >
+                <div className="w-28 h-36">
+                  <img
+                    src={goldframe}
+                    alt=""
+                    className="w-full h-full mix-blend-darken object-cover pointer-events-none"
+                  />
+                </div>
+                <p className="text-center text-sm">GHC 150</p>
+                {frame2 ? (
+                  <img
+                    src={checkedicon}
+                    alt=""
+                    className="absolute -right-2 -top-2"
+                    width={20}
+                  />
+                ) : (
+                  ""
+                )}
+              </div>
+            </div>
+            <div className="mt-5 ml-14">
+              <div className="flex  w-80 mx-auto items-center leading-none mb-0">
+                <NavLink to="" className="p-2 text-sm shadow-lg bg-white">
+                  Product Options
+                </NavLink>
+                <NavLink to="" className="p-2 text-sm shadow-lg bg-white">
+                  Product Details
+                </NavLink>
+              </div>
+              <div className="shadow-lg h-32 lg:w-[17rem] w-64 bg-white border-gray-400 border-[1px] border-solid text-sm p-2 rounded-md lg:ml-[3.3rem]">
+                <p>Material: Wood</p>
+                <p>Size Options: Various</p>
+                <p>Design Variety: Yes</p>
+                <p>Durability: High</p>
+                <p>Finish: Multiple</p>
+              </div>
+              <div className="mt-2 flex items-center w-80 mx-auto space-x-4">
+                <div className="flex space-x-2">
+                  <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    className="accent-green"
+                    onChange={partPayment}
+                  />
+                  <label htmlFor="" className="text-sm">
+                    PART PAYMENT
+                  </label>
+                </div>
+                <div className="flex space-x-2">
+                  <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    className="accent-green"
+                    onChange={deliverySection}
+                  />
+                  <label htmlFor="" className="text-sm">
+                    DELIVERY
+                  </label>
+                </div>
+              </div>
+              {part ? (
+                <div
+                  data-aos="fade"
+                  data-aos-duration="1500"
+                  className="flex items-end w-80 mx-auto space-x-4 text-sm"
+                >
+                  <label htmlFor="" className="w-14">
+                    DEPOSIT
+                  </label>
+                  <div className="flex justify-center items-center text-xs h-6 shadow-md bg-white rounded-md pl-10 pb-2 w-24 border-solid border-[1px] border-gray-600 pt-0">
+                    <span className="mt-2">GHC</span>
+                    <input
+                      type="number"
+                      className="focus:outline-none border-none p-1 text-xs mt-2 border-gray-400 border-[1px]  rounded-md w-24 bg-transparent"
+                    />
+                  </div>
+                </div>
+              ) : (
+                <></>
+              )}
+              <div className="flex items-end w-80 mx-auto space-x-4 text-sm">
+                <label htmlFor="" className="w-14">
+                  TOTAL
+                </label>
+                <div className="flex justify-center items-center text-xs h-6 shadow-md bg-white rounded-md pl-10 pb-2 w-24 border-solid border-[1px] border-gray-600 pt-0">
+                  <span className="mt-2">GHC</span>
+                  <input
+                    type="number"
+                    value={600}
+                    disabled
+                    className="focus:outline-none border-none p-1 text-xs mt-2 border-gray-400 border-[1px]  rounded-md w-24 bg-transparent"
+                  />
+                </div>
+                <button className="border-2 bg-white tracking-widest uppercase border-solid border-black py-0.5 px-2 rounded-md shadow-xl text-sm">
+                  Checkout
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

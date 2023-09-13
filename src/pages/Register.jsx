@@ -119,7 +119,11 @@ const Register = () => {
           Signup
         </NavLink>
       </div>
-      <form action="" className="mx-auto w-72 mt-8 sm:pb-0 pb-10">
+      <form
+        onSubmit={handleClick}
+        action=""
+        className="mx-auto w-72 mt-8 sm:pb-0 pb-10"
+      >
         <Input
           label="Full Name"
           logo={user}
@@ -172,10 +176,7 @@ const Register = () => {
             </label>
           </div>
         </div>
-        <button
-          onClick={handleClick}
-          className="bg-purple shadow-lg text-white rounded-md py-2.5 block w-full mt-4 disabled:opacity-40 "
-        >
+        <button className="bg-purple shadow-lg text-white rounded-md py-2.5 block w-full mt-4 disabled:opacity-40 ">
           {details?.gown || details?.photoshoot
             ? "Proceed"
             : isLoading

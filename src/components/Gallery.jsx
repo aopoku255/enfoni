@@ -26,7 +26,7 @@ const Gallery = () => {
       </div> */}
       <Swiper3D />
       <div className="md:mt-24  mt-10 mb-24">
-        <div className="lg:grid lg:grid-cols-2 gap-4 border-spacing-y-8">
+        <div className="lg:grid lg:grid-cols-2 gap-4 lg:space-y-0 space-y-10 border-spacing-y-8">
           <div className="">
             <p className="text-green lg:text-5xl font-bold text-4xl text-center lg:text-left 2xl:text-7xl">
               TESTIMONIALS
@@ -34,7 +34,11 @@ const Gallery = () => {
             <h1 className="text-green font-bold text-2xl my-3 text-center lg:text-left 2xl:text-4xl">
               Client Reviews{" "}
             </h1>
-            <p className="text-justify 2xl:text-3xl">
+            <p
+              className="text-justify 2xl:text-3xl"
+              data-aos="fade-right"
+              data-aos-duration="2000"
+            >
               Hear From Our Graduates: Heartfelt Experiences Shared by Those
               We've Proudly Served. Discover how our meticulous attention to
               detail in gown fittings, the artistry of our photoshoots, and the

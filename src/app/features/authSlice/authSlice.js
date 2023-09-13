@@ -37,6 +37,7 @@ const authSlice = createSlice({
   },
 });
 
-export const { auth, payment } = authSlice.actions;
+export const { auth, payment, userInfo } = authSlice.actions;
 export const registerDetails = (state) => state?.auth?.auth;
+export const userinfo = (state) => state?.auth?.userInfo;
 export default authSlice.reducer;

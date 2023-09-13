@@ -1,8 +1,8 @@
 import React from "react";
 
-const ServiceCard = ({ heading, description }) => {
+const ServiceCard = ({ heading, description, ...props }) => {
   return (
-    <div className="group  shadow-2xl p-6 rounded-3xl md:mb-0 mb-10">
+    <div className="group  shadow-2xl p-6 rounded-3xl md:mb-0 mb-10" {...props}>
       <h3 className="text-green font-bold lg:text-2xl 2xl:text-4xl">
         {heading}
       </h3>

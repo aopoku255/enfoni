@@ -19,31 +19,22 @@ export default function ReviewCarousel() {
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        // }}
         pagination={{
           clickable: true,
         }}
-        // navigation={true}
+        navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper lg:w-128 md:w-144 lg:shadow-2xl shadow-lg rounded-3xl lg:shadow-light-green lg:mt-0 mt-10 h-96 lg:h-80"
+        className=""
       >
         <SwiperSlide>
-          <ReviewCard />
+          <p>Pra</p>
         </SwiperSlide>
         <SwiperSlide>
-          <ReviewCard
-            image="https://images.unsplash.com/photo-1417325384643-aac51acc9e5d?q=75&fm=jpg&w=400&fit=max"
-            name="Adino"
-            position="Photographer"
-            heading="Nice working For Enfoni"
-            description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, tempore!"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ReviewCard />
+          <p>Man</p>
         </SwiperSlide>
       </Swiper>
     </>

@@ -6,14 +6,19 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../review.css";
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import {
+  EffectCoverflow,
+  Pagination,
+  Navigation,
+  Autoplay,
+} from "swiper/modules";
 
 import slide_image_1 from "../assets/images/asantewaa.svg";
 import slide_image_2 from "../assets/images/financial derrick.svg";
 import slide_image_3 from "../assets/images/lady.svg";
 import slide_image_4 from "../assets/images/michael abuah.svg";
 import slide_image_5 from "../assets/images/greysuit.svg";
-import slide_image_6 from "../assets/images/greysuit.svg";
+import slide_image_6 from "../assets/images/alhaji.jpg";
 import slide_image_7 from "../assets/images/lady.svg";
 
 function Swiper3D() {
@@ -24,6 +29,10 @@ function Swiper3D() {
       centeredSlides={true}
       loop={true}
       slidesPerView={"auto"}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
       coverflowEffect={{
         rotate: 0,
         stretch: 0,
@@ -36,7 +45,7 @@ function Swiper3D() {
         prevEl: ".swiper-button-prev",
         clickable: true,
       }}
-      modules={[EffectCoverflow, Pagination, Navigation]}
+      modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
       className="swiper_container"
     >
       <SwiperSlide>
