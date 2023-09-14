@@ -7,23 +7,29 @@ import Swiper3D from "./Swiper3D";
 const Gallery = () => {
   return (
     <div className="md:px-24 px-6 mt-10 " id="gallery">
-      <h1 className="text-center font-bold  md:text-5xl text-4xl text-green 2xl:text-8xl 2xl:mt-24">
+      <h1 className="text-center font-bold  md:text-5xl text-4xl text-green 2xl:text-8xl 2xl:mt-24 lg:mt-28">
         Gallery
       </h1>
-      <p className="text-center mt-3 font-semibold 2xl:text-3xl 2xl:w-165 2xl:my-8 2xl:mx-auto">
+      <p className="text-center mt-3 font-semibold 2xl:text-3xl 2xl:w-165 2xl:my-8 2xl:mx-auto lg:w-[27rem] lg:mx-auto">
         Browse Through Our Gallery of Unforgettable Graduation Moments.
       </p>
-      {/* <div className="group flex mx-auto justify-between items-center w-96 mt-3">
-        <button className="focus:bg-green bg-slate-400 rounded-md px-3 py-1 text-white/80">
+      <div className="group flex mx-auto w-144 justify-between items-cente mt-3 space-x-4">
+        <button className="focus:bg-green bg-green rounded-md px-10 py-1 text-white">
           PHOTOSHOOTS
         </button>
-        <button className="focus:bg-green bg-slate-400 rounded-md px-3 py-1 text-white/80">
+        <button
+          disabled
+          className="focus:bg-green bg-gray-500 rounded-md px-10 py-1 text-white"
+        >
           SOUVENIRS
         </button>
-        <button className="focus:bg-green bg-slate-400 rounded-md px-3 py-1 text-white/80">
+        <button
+          disabled
+          className="focus:bg-green bg-gray-500 rounded-md px-10 py-1 text-white"
+        >
           MERCHANDISE
         </button>
-      </div> */}
+      </div>
       <Swiper3D />
       <div className="md:mt-24  mt-10 mb-24">
         <div className="lg:grid lg:grid-cols-2 gap-4 lg:space-y-0 space-y-10 border-spacing-y-8">

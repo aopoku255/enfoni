@@ -37,7 +37,7 @@ const Login = () => {
       toast.success(response?.message);
     }
     if (response?.status === 400) {
-      toast.error(response?.data);
+      toast.error(response?.data || response?.message);
     }
   };
 
