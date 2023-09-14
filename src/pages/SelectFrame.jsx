@@ -39,6 +39,23 @@ const SelectFrame = () => {
     setDelivery(checked);
   };
 
+  const navigate = useNavigate();
+
+  const componentsProps = {
+    email: "user@gmail.com",
+    amount: 600 * 100,
+    publicKey: "pk_test_23f924a439b032f8ec5c594e55dbda122545ad1e",
+    currency: "GHS",
+    text: "CHECKOUT",
+    onSuccess: (data) => {
+      sessionStorage.setItem("data", JSON.stringify(data));
+      toast.success(data?.status);
+      setTimeout(() => {
+        navigate("/code");
+      }, 4000);
+    },
+  };
+
   return (
     <div>
       <ToastContainer />
@@ -232,9 +249,10 @@ const SelectFrame = () => {
                     className="focus:outline-none border-none p-1 text-xs mt-2 border-gray-400 border-[1px]  rounded-md w-24 bg-transparent"
                   />
                 </div>
-                <button className="border-2 bg-white tracking-widest uppercase border-solid border-black py-0.5 px-2 rounded-md shadow-xl text-sm">
-                  Checkout
-                </button>
+                <PaystackButton
+                  {...componentsProps}
+                  className="border-2 bg-white tracking-widest uppercase border-solid border-black py-0.5 px-2 rounded-md shadow-xl text-sm"
+                />
               </div>
             </div>
           </div>
