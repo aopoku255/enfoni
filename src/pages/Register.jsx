@@ -128,7 +128,7 @@ const Register = () => {
           label="Full Name"
           logo={user}
           type="text"
-          autoFocus={true}
+          // autoFocus={true}
           name="full_name"
           onChange={handleChange}
           value={details?.full_name}

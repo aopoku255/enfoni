@@ -80,7 +80,7 @@ const Login = () => {
           name="email"
           value={details.email}
           onChange={handleChange}
-          autoFocus={true}
+          // autoFocus={true}
         />
         <Input
           label="Password"

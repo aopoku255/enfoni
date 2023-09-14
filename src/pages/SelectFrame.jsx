@@ -43,8 +43,8 @@ const SelectFrame = () => {
     <div>
       <ToastContainer />
       <div className="lg:grid lg:grid-cols-2">
-        <div className=" inset-0 bg-[url(./assets/images/uptoGod.svg)] bg-no-repeat bg-cover h-screen w-screen">
-          <div className="flex justify-center items-center flex-col space-y-5 bg-white/95 h-screen w-screen">
+        <div className=" inset-0 bg-[url(./assets/images/uptoGod.svg)] bg-no-repeat bg-cover h-screen">
+          <div className="flex justify-center items-center flex-col space-y-5 bg-white/95 h-screen">
             <img
               src={knustlogo}
               alt=""
@@ -65,8 +65,8 @@ const SelectFrame = () => {
             </p>
           </div>
         </div>
-        <div className="bg-light-green lg:h-[95vh] w-[80%]  mx-auto mt-4 rounded-lg shadow-xl lg:mb-0 mb-10">
-          <div className="shadow-xl lg:h-[95%] w-[95%] mx-auto rounded-lg">
+        <div className="bg-light-green lg:h-[95vh] lg:w-[80%] w-[90%]  mx-auto mt-4 rounded-lg shadow-xl lg:mb-0 mb-10 lg:pb-0 pb-5 ">
+          <div className="shadow-xl lg:h-[95%] w-[95%] mx-auto rounded-lg pb-10">
             <h1 className="text-center mt-4 text-xl">SELECT A FRAME</h1>
             <div className="flex justify-center items-center space-x-2 mt-3">
               <NavLink
@@ -157,7 +157,7 @@ const SelectFrame = () => {
                 )}
               </div>
             </div>
-            <div className="mt-5 ml-14">
+            <div className="mt-5 lg:ml-14 ml-8">
               <div className="flex  w-80 mx-auto items-center leading-none mb-0">
                 <NavLink to="" className="p-2 text-sm shadow-lg bg-white">
                   Product Options
@@ -212,7 +212,7 @@ const SelectFrame = () => {
                     <span className="mt-2">GHC</span>
                     <input
                       type="number"
-                      className="focus:outline-none border-none p-1 text-xs mt-2 border-gray-400 border-[1px]  rounded-md w-24 bg-transparent"
+                      className="focus:outline-none border-none p-1 text-xs mt-2 border-red-400 border-[1px]  rounded-md w-24 bg-transparent"
                     />
                   </div>
                 </div>
