@@ -81,7 +81,7 @@ const Navbar = () => {
             Gallery
           </a>
           <a
-            href="#"
+            href="#pricing"
             className="text-sm font-semibold leading-6 text-gray-900 lg:text-white"
           >
             Pricing

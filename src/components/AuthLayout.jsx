@@ -38,19 +38,23 @@ const AuthLayout = ({
         }
       });
     }, 3000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+    // return () => clearInterval(interval);
+  }, []);
 
   return (
     <div>
       <div className="lg:grid lg:grid-cols-2 relative lg:bg-none bg-[url(./assets/images/register.svg)] bg-no-repeat bg-cover bg-center lg:h-[calc(100vh-20px)]">
-        <div data-aos="fade" data-aos-duration="2000" className="w-full">
+        <div
+          // data-aos="fade"
+          // data-aos-duration="2000"
+          className="w-full animate-fadedown"
+        >
           <img
             src={images[index]}
             alt=""
             data-aos="fade"
             data-aos-duration="2000"
-            className="h-screen lg:block hidden object-cover w-full  pointer-events-none"
+            className="h-screen lg:block hidden object-cover w-full  pointer-events-none "
           />
         </div>
         <div>

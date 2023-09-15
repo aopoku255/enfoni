@@ -26,6 +26,7 @@ function App() {
           <Route path="/details" element={<MoreDetails />} />
           <Route path="/code" element={<Code />} />
           <Route path="/select-frame" element={<SelectFrame />} />
+
           <Route exact path="*" element={<Error />} />
         </Routes>
       </Router>
