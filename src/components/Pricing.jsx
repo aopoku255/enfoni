@@ -2,22 +2,24 @@ import React from "react";
 import { BiCheck } from "react-icons/bi";
 import { LiaTimesSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
+import howtoorder from "../assets/images/howtoorder.png";
+import faq from "../assets/images/faq.png";
 
 const Pricing = () => {
   const handleClick = (e) => {
     console.log(e.target);
   };
   return (
-    <div className="mx-20 mb-24" id="pricing">
+    <div className="lg:mx-20 px-6" id="pricing">
       <h1 className="text-center font-bold  md:text-5xl text-4xl text-green 2xl:text-8xl 2xl:mt-24 lg:mt-28">
         Pricing
       </h1>
-      <div className="grid grid-cols-3 mt-14 space-x-5">
+      <div className="grid grid-cols-3 my-20 space-x-6">
         <div
           data-aos="fade-up"
           data-aos-duration="2000"
-          data-aos-delay="500"
-          className="border-[1px] border-gray-400/50 hover:bg-gray-50 hover:transition-all duration-500 border-solid rounded-xl p-16"
+          data-aos-delay="10"
+          className="border-[1px] border-gray-400/50 hover:bg-gray-50 hover:transition-all duration-500 border-solid rounded-xl lg:p-16 p-8"
         >
           <h1 className="text-gray-700 font-Poppins font-semibold text-center text-2xl">
             Basic
@@ -67,8 +69,8 @@ const Pricing = () => {
         <div
           data-aos="fade-up"
           data-aos-duration="2000"
-          data-aos-delay="1000"
-          className="border-[1px] border-gray-400/50 hover:bg-gray-50 hover:transition-all duration-500 border-solid rounded-xl p-16"
+          data-aos-delay="500"
+          className="border-[1px] md:my-0 my-10 border-gray-400/50 hover:bg-gray-50 hover:transition-all duration-500 border-solid rounded-xl p-16"
         >
           <h1 className="text-gray-700 font-Poppins font-semibold text-center text-2xl">
             Silver
@@ -117,7 +119,7 @@ const Pricing = () => {
         <div
           data-aos="fade-up"
           data-aos-duration="2000"
-          data-aos-delay="1500"
+          data-aos-delay="1000"
           className="border-[1px] border-gray-400/50 hover:bg-gray-50 hover:transition-all duration-500 border-solid rounded-xl p-16"
         >
           <h1 className="text-gray-700 font-Poppins font-semibold text-center text-2xl">
