@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import { userinfo } from "../app/features/authSlice/authSlice";
 
 const Navbar = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const details = useSelector(userinfo);
   const handleOpenMenu = () => {
     // document.querySelector("div[role='dialog']").classList.toggle("hidden");
@@ -23,15 +23,15 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-transparen">
+    <header className="bg-transparent">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex items-center justify-between lg:py-6"
         aria-label="Global"
       >
-        <div className="flex lg:flex-1">
+        <div className="lg:flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img className="lg:h-16 w-auto" src={logo2} alt="" />
+            <img className="lg:h-16 w-auto 2xl:h-28" src={logo2} alt="" />
           </a>
         </div>
         <div className="flex lg:hidden" onClick={handleOpenMenu}>
@@ -46,7 +46,7 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              aria-hidden="true"
+              aria-hidden="false"
             >
               <path
                 stroke-linecap="round"
@@ -60,7 +60,7 @@ const Navbar = () => {
           <div className="relative">
             <button
               type="button"
-              className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 lg:text-white"
+              className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 2xl:text-3xl lg:text-white"
               aria-expanded="false"
             >
               Home
@@ -71,25 +71,25 @@ const Navbar = () => {
 
           <a
             href="#services"
-            className="text-sm font-semibold leading-6 text-gray-900 lg:text-white"
+            className="text-sm font-semibold leading-6 text-gray-900 2xl:text-3xl lg:text-white"
           >
             Services
           </a>
           <a
             href="#gallery"
-            className="text-sm font-semibold leading-6 text-gray-900 lg:text-white"
+            className="text-sm font-semibold leading-6 text-gray-900 2xl:text-3xl lg:text-white"
           >
             Gallery
           </a>
           <a
             href="#pricing"
-            className="text-sm font-semibold leading-6 text-gray-900 lg:text-white"
+            className="text-sm font-semibold leading-6 text-gray-900 2xl:text-3xl lg:text-white"
           >
             Pricing
           </a>
           <a
             href="#"
-            className="text-sm font-semibold leading-6 text-gray-900 lg:text-white"
+            className="text-sm font-semibold leading-6 text-gray-900 2xl:text-3xl lg:text-white"
           >
             About
           </a>
@@ -98,7 +98,7 @@ const Navbar = () => {
             <div class="relative">
               <button
                 type="button"
-                class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white"
+                className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white 2xl:text-3xl"
                 aria-expanded="false"
                 onClick={handleOpenSchools}
               >
@@ -235,7 +235,7 @@ const Navbar = () => {
           ) : (
             <Link
               to="/login"
-              className="text-sm font-semibold leading-6 text-gray-900 lg:text-white"
+              className="text-sm font-semibold leading-6 text-gray-900 lg:text-white 2xl:text-3xl"
             >
               Log in <span aria-hidden="true">&rarr;</span>
             </Link>

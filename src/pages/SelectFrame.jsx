@@ -219,7 +219,7 @@ const SelectFrame = () => {
                   Product Details
                 </NavLink>
               </div>
-              <div className="shadow-lg h-32 lg:w-[17rem] w-64 bg-white border-gray-400 border-[1px] border-solid text-sm p-2 rounded-md lg:ml-[3.3rem]">
+              <div className="md:ml-52 shadow-lg h-32 lg:w-[17rem] w-64 bg-white border-gray-400 border-[1px] border-solid text-sm p-2 rounded-md lg:ml-[3.3rem]">
                 <p>Material: Wood</p>
                 <p>Size Options: Various</p>
                 <p>Design Variety: Yes</p>

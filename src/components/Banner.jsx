@@ -18,7 +18,7 @@ const Banner = () => {
               data-aos="fade-up"
               data-aos-duration="3000"
               text="Graduation Made Memorable"
-              className="font-[700] font-Poppins text-white lg:text-5xl md:text-4xl lg:text-left text-center 2xl:text-7xl"
+              className="font-[700] font-Poppins text-white lg:text-5xl md:text-4xl lg:text-left text-center 2xl:text-7xl text-2xl"
             />
             <p
               data-aos="fade-right"
