@@ -14,6 +14,12 @@ import MoreDetails from "./pages/MoreDetails";
 import Error from "./pages/Error";
 import Code from "./pages/Code";
 import SelectFrame from "./pages/SelectFrame";
+import MyAccount from "./pages/MyAccount";
+import Dashboard from "./pages/Dashboard";
+import Appointment from './pages/Appointment';
+import OrderHistory from "./pages/OrderHistory";
+import SavedItems from "./pages/SavedItems";
+
 
 function App() {
   return (
@@ -26,6 +32,11 @@ function App() {
           <Route path="/details" element={<MoreDetails />} />
           <Route path="/code" element={<Code />} />
           <Route path="/select-frame" element={<SelectFrame />} />
+          <Route path ="/my-account" element= {<MyAccount />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/appointment" element={<Appointment />} />
+          <Route path="/order-history" element={<OrderHistory />} />
+          <Route path="/saved-items" element={<SavedItems />} />
           <Route exact path="*" element={<Error />} />
         </Routes>
       </Router>
@@ -34,3 +45,5 @@ function App() {
 }
 
 export default App;
+
+
