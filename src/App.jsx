@@ -19,7 +19,7 @@ import Dashboard from "./pages/Dashboard";
 import Appointment from './pages/Appointment';
 import OrderHistory from "./pages/OrderHistory";
 import SavedItems from "./pages/SavedItems";
-
+import MyPhotoshoots from "./pages/MyPhotoshoots";
 
 function App() {
   return (
@@ -37,6 +37,7 @@ function App() {
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/order-history" element={<OrderHistory />} />
           <Route path="/saved-items" element={<SavedItems />} />
+          <Route path="/my-photoshoots" element={<MyPhotoshoots />} />
           <Route exact path="*" element={<Error />} />
         </Routes>
       </Router>

@@ -9,7 +9,7 @@ function Table() {
       <small className="text-zinc-500 text-xs font-normal font-['Lato'] text-center md:text-left block">
         Below you can find your appointment history
       </small>
-      <div className="overflow-x-scroll">
+      <div >
         <table className=" mt-4 ml-2 bg-red-100">
           <thead>
             <tr>

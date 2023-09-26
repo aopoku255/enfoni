@@ -30,6 +30,9 @@ export default {
         '150': '40rem',
         '160': '45rem',
         '165': '50rem',
+        '170': '60rem',
+        '175': '70rem',
+        '185': '80rem'
       },
       borderSpacing: {
         '1': "1px"
