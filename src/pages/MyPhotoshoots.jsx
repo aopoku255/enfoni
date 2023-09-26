@@ -17,6 +17,7 @@ const MyPhotoshoots = () => {
   const [zoomedSrc, setZoomedSrc] = useState(null);
   const [isZoomed, setIsZoomed] = useState(false);
   const [toggleMenu, setToggleMenu] = React.useState(false);
+  const [print, setPrint] = React.useState(false);
 
   function handleOpen() {
     setToggleMenu(true);
@@ -71,15 +72,18 @@ const MyPhotoshoots = () => {
               )}
               {shoots.map((shoot, index) => {
                 return (
+                  
                   <div
                     key={index}
-                    className="w-[350px] h-[400px] md:w-[250px] md:h-[300px] rounded-lg shadow flex items-end relative"
+                    className="w-[350px] h-[400px] md:w-[250px] md:h-[300px] rounded-lg shadow flex items-end"
                     style={{
                       backgroundImage: `url(${shoot}`,
                       backgroundSize: "cover",
                     }}
+                    
                   >
-                    <input type="checkbox" className="absolute top-2 left-2 " />
+
+                    <input type="checkbox" className="self-start ml-2 mt-2"/>
                     <div className="flex justify-between px-4 w-full">
                       <BiDownload
                         download={shoot}
@@ -92,7 +96,7 @@ const MyPhotoshoots = () => {
                         }}
                       />
                       <AiFillEye
-                     onClick={() => handleImageChange(shoot)}
+                      onClick={() => handleImageChange(shoot)}
                         style={{
                           color: "#fff",
                           fontSize: "2rem",
@@ -111,7 +115,7 @@ const MyPhotoshoots = () => {
           </div>
         </div>
       </div>)}
-      
+      <div className="mt-4 rounded-tl-lg rounded-tr-lg h-24 w-full bg-red-400/50"></div> 
     </DashboardLayout>
   );
 };
