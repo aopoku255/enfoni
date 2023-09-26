@@ -22,7 +22,7 @@ const Appointment = () => {
       {toggleMenu ? (
         <Menu closeMenu={handleClose} />
       ) : (
-        <div className="md:mt-10  flex flex-col items-center lg:items-start lg:mx-48 md:px-0 sm:px-10 h-screen relative">
+        <div className="md:mt-10  flex flex-col items-center lg:items-start lg:mx-48 md:px-0 sm:px-10  relative">
           <div
             className="absolute left-4 top-3 md:hidden sm:block"
             onClick={handleOpen}
