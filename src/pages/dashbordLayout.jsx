@@ -11,19 +11,20 @@ const DashboardLayout = ({ children }) => {
   const gradientStyle = {
     background: "linear-gradient(to bottom right, #3FD494, #0CE301)",
     color:'#fff',
-    boxShadow:"rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;"  
+    boxShadow:"rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"  
   };  
 
   return (
     
-    <div className="wrapper flex flex-wrap md:basis-12/12 h-screen overflow-y-hidden md:px-8 justify-center items-center w-screen ">
-      <div className=" md:basis-2/12 px-10 mt-10 h-screen hidden md:block">
+    <div className="wrapper flex flex-wrap h-screen justify-between overflow-y-auto md:px-8 w-full">
+      <div className=" flex-1 px-10 mt-10 h-screen hidden md:block basis-[20%]">
+      <div className="overflow-y-scroll fixed scrollbar-hide">
         <img src={ppic} alt="profile-image" className="pl-6" />
-        <h3 className="font-bold mt-6 capitalize ">Hello Enfonison</h3>
+        <h3 className="font-bold mt-6 capitalize ">Hello Kwadwo</h3>
         <small className=" mb-6  pl-2 text-zinc-500 text-sm text-center">
-          enfonienfonison@gmail.com
+          kwadwo@gmail.com
         </small>
-
+        
         <NavLink
           to="/dashboard"
           className="my-2 md:my-12  text-black text-[.9rem] px-2 font-medium font-['Poppins'] rounded  block hover:bg-gradient-to-br from-color1 to-color2 hover:text-white w-fit pl-4 pr-8"
@@ -52,20 +53,20 @@ const DashboardLayout = ({ children }) => {
         >
           Saved items
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to="/cart"
             className="my-2 md:my-12 text-black text-[.9rem] px-2 font-medium font-['Poppins'] rounded block hover:bg-gradient-to-br from-color1 to-color2 hover:text-white w-fit pl-4 pr-8"
           style={({ isActive }) => (isActive ? gradientStyle : {})}
         >
           Cart
-        </NavLink>
-        <NavLink
+        </NavLink> */}
+        {/* <NavLink
           to="/my-gown"
             className="my-2 md:my-12 text-black text-[.9rem] px-2 font-medium font-['Poppins'] rounded block hover:bg-gradient-to-br from-color1 to-color2 hover:text-white w-fit pl-4 pr-8"
           style={({ isActive }) => (isActive ? gradientStyle : {})}
         >
           My gowns
-        </NavLink>
+        </NavLink> */}
         <NavLink
           to="/my-photoshoots"
           className="my-2 md:my-12 text-black text-[.9rem] px-2 font-medium font-['Poppins'] rounded block hover:bg-gradient-to-br from-color1 to-color2 hover:text-white w-fit pl-4 pr-8"
@@ -78,10 +79,12 @@ const DashboardLayout = ({ children }) => {
             className="my-2 md:my-12 text-black text-[.9rem] px-2 font-medium font-['Poppins'] rounded block hover:bg-gradient-to-br from-color1 to-color2 hover:text-white w-fit pl-4 pr-8"
           style={({ isActive }) => (isActive ? gradientStyle : {})}
         >
-          My merch
+          Frames
         </NavLink>
+        </div>
+        
       </div>
-      <div className="h-screen overflow-y-auto   mx-auto md:basis-8/12 lg:basis-9/12" >{children}</div>
+      <div className="h-screen  mx-auto basis-[70%]" >{children}</div>
     </div>
   );
 };

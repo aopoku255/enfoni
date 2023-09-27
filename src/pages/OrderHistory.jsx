@@ -29,9 +29,9 @@ const OrderHistory = () => {
     <DashboardLayout>
 
       {toggleMenu ? <Menu closeMenu={handleClose} />: (
-          <div className="orders  2xl:max-w-[900px] flex flex-col ">
+          <div className="orders  2xl:max-w-[900px]  h-screen flex flex-col  scrollbar-hide">
           <div className="absolute left-4 top-3 md:hidden sm:block" onClick={handleOpen}><FaBarsStaggered /></div>
-            <h2 className="w-48 h-4 mt-10 text-black text-2xl font-bold font-['Lato'] mb-2 ml-4 lg:ml-0 ">
+            <h2 className="w-48 h-4 mt-10 text-black text-2xl font-bold font-['Lato'] mb-2 ml-4 lg:ml-0">
               Order History
             </h2>
             <small className="w-48 h-4  text-zinc-500 text-xs font-normal font-['Lato'] ml-4 lg:ml-0 mt-4 block lg:mt-0">

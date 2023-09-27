@@ -11,6 +11,8 @@ import { AiFillEye } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { Menu } from "../components/Menu";
+import {HiOutlineFolderDownload}from "react-icons/hi";
+import {LiaPrintSolid} from "react-icons/lia"
 
 const MyPhotoshoots = () => {
   const shoots = [shoot1, shoot2, shoot3, shoot4, shoot5, shoot6];
@@ -19,12 +21,14 @@ const MyPhotoshoots = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
   const [print, setPrint] = React.useState(false);
 
+
+
   function handleOpen() {
     setToggleMenu(true);
   }
 
   function handleClose() {
-    setToggleMenu(false);
+    
   }
 
   const handleImageChange = (shoot) => {
@@ -36,18 +40,52 @@ const MyPhotoshoots = () => {
     setIsZoomed(false);
   };
 
+  const handleChange = (e) => {
+    console.log(e.target.checked)
+  //  console.log(!print)
+  }
+
+
   return (
     <DashboardLayout>
       {toggleMenu ? <Menu closeMenu = {handleClose}  />:(<div className="mt-10">
         <div className="flex justify-between">
           <div>
+            <div className="flex mb-4 justify-between">
             <FaBarsStaggered className="block md:hidden" onClick={handleOpen}/>
+            <div className="">
             <h1 className="text-black text-2xl font-bold font-['Lato']">
               My Photoshoots
             </h1>
             <small className="text-zinc-500 text-xs font-normal font-['Lato']">
               Find your saved items and get ready to order them
             </small>
+            </div>
+            
+            <div className="flex ">
+              <HiOutlineFolderDownload className=" font-bold hover:scale-125 hover:text-green transition-all duration-200 ease-in mr-2 " style={{
+                          color: "black",
+                          fontSize: "2rem",
+                          borderRadius: "6.923px",
+                          backgroundColor: "rgba(255, 255, 255, 0.13)",
+                          padding: "7px",
+                          boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
+                        
+                        }}/>
+            <LiaPrintSolid className="font-bold hover:scale-125 hover:text-green transition-all duration-200 ease-in mr-2 " style={{
+                          color: "black",
+                          fontSize: "2rem",
+                          borderRadius: "6.923px",
+                          backgroundColor: "rgba(255, 255, 255, 0.13)",
+                          padding: "7px",
+                          boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
+                        }} />
+            </div>
+            </div>
+           
+            
+
+
 
             <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 md:grid-cols-2 gap-4 relative  ">
               {isZoomed && (
@@ -83,7 +121,9 @@ const MyPhotoshoots = () => {
                     
                   >
 
-                    <input type="checkbox" className="self-start ml-2 mt-2"/>
+                    <input type="checkbox" className="self-start ml-2 mt-2"  onChange={handleChange} />
+
+
                     <div className="flex justify-between px-4 w-full">
                       <BiDownload
                         download={shoot}
@@ -115,7 +155,7 @@ const MyPhotoshoots = () => {
           </div>
         </div>
       </div>)}
-      <div className="mt-4 rounded-tl-lg rounded-tr-lg h-24 w-full bg-red-400/50"></div> 
+      <div className="mt-4 hidden rounded-tl-lg rounded-tr-lg h-24 w-full bg-red-400/50"></div> 
     </DashboardLayout>
   );
 };
