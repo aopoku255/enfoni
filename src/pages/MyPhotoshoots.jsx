@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState } from "react";
 import DashboardLayout from "./dashbordLayout";
 import shoot1 from "../assets/images/shoot1.jpg";
 import shoot2 from "../assets/images/shoot2.jpg";
@@ -15,12 +15,47 @@ import {HiOutlineFolderDownload}from "react-icons/hi";
 import {LiaPrintSolid} from "react-icons/lia"
 
 const MyPhotoshoots = () => {
-  const shoots = [shoot1, shoot2, shoot3, shoot4, shoot5, shoot6];
+  const shoots = [
+    {
+      price: 100,
+      img:shoot1,
+      // checked: true,
+},
+{
+  price: 100,
+  img:shoot2, 
+  // checked: true,
+
+},
+{
+  price: 100,
+  img:shoot3,
+  // checked: true,
+},
+{
+  price:  200,
+  img:shoot4, 
+  // checked: true,
+},
+{
+  price: 100,
+  img:shoot5, 
+  // checked: true,
+},
+{
+  price: 350,
+  img:shoot6, 
+  // check:true,
+}
+];
+
   const [zoomedSrc, setZoomedSrc] = useState(null);
   const [isZoomed, setIsZoomed] = useState(false);
   const [toggleMenu, setToggleMenu] = React.useState(false);
-  const [print, setPrint] = React.useState(false);
+  const [print, setPrint] = React.useState(shoots);
 
+  const[isCheck, setIsCheck] = React.useState(false);
+  const[pricing, setPricing] = React.useState(0);
 
 
   function handleOpen() {
@@ -40,12 +75,21 @@ const MyPhotoshoots = () => {
     setIsZoomed(false);
   };
 
-  const handleChange = (e) => {
-    console.log(e.target.checked)
-  //  console.log(!print)
-  }
 
+  const handleChange = (isChecked, price) => {
+    setIsCheck(isChecked);
+    setPricing((prev)  =>  {
+      isChecked ? prev + price : prev - price
+    })
 
+  };
+  useEffect(() => {
+    setPricing((pricing) => (
+      console.log(pricing)
+    ));
+  }, [isCheck]);
+
+  
   return (
     <DashboardLayout>
       {toggleMenu ? <Menu closeMenu = {handleClose}  />:(<div className="mt-10">
@@ -115,13 +159,20 @@ const MyPhotoshoots = () => {
                     key={index}
                     className="w-[350px] h-[400px] md:w-[250px] md:h-[300px] rounded-lg shadow flex items-end"
                     style={{
-                      backgroundImage: `url(${shoot}`,
+                      backgroundImage: `url(${shoot.img}`,
                       backgroundSize: "cover",
                     }}
                     
-                  >
-
-                    <input type="checkbox" className="self-start ml-2 mt-2"  onChange={handleChange} />
+                      >
+                      <input
+                        type="checkbox"
+                        className="self-start ml-2 mt-2"
+                        // onChange={(e,total) => {
+                        //   handleChange(e.target.checked ? total = shoot.price : (total- shoot.price))}}
+                        onChange={(e) => {
+                          handleChange(e.target.checked, shoot.price)}}
+                      />
+                      
 
 
                     <div className="flex justify-between px-4 w-full">
@@ -136,7 +187,7 @@ const MyPhotoshoots = () => {
                         }}
                       />
                       <AiFillEye
-                      onClick={() => handleImageChange(shoot)}
+                      onClick={() => handleImageChange(shoot.img)}
                         style={{
                           color: "#fff",
                           fontSize: "2rem",
